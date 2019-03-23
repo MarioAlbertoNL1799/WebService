@@ -36,7 +36,7 @@ class Delete:
         result.id = config.make_secure_val(str(result.id)) # apply HMAC for id
         return config.render.delete(result, message) # render delete.html with user data
 
-    def POST_DELETE(id, **k):
+    def POST_DELETE(self,id, **k):
         form = config.web.input() # get form data
         form['id'] = config.check_secure_val(str(form['id'])) # HMAC id validate
         result = config.model.delete_clientes(form['id']) # get clientes data

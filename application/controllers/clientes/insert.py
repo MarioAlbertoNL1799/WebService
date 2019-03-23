@@ -6,7 +6,7 @@ class Insert:
 
     def __init__(self):
         pass
-
+        
     def GET(self):
         if app.session.loggedin is True:
             # session_username = app.session.username
@@ -30,10 +30,10 @@ class Insert:
             raise config.web.seeother('/login') # render login.html
 
 
-    def GET_INSERT():
+    def GET_INSERT(self):
         return config.render.insert() # render insert.html
 
-    def POST_INSERT():
+    def POST_INSERT(self):
         form = config.web.input() # get form data
 
         # call model insert_clientes and try to insert new data

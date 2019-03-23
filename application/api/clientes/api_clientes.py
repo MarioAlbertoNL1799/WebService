@@ -28,7 +28,7 @@ class Api_clientes:
             web.header('Content-Type', 'application/json')
             return json.dumps(clientes_json)
 
-# localhost:8080/api_clientes?user_hash=12345&action=put&id=1&product=nuevo&description=nueva&stock=10&purchase_price=1&price_sale=3&product_image=0
+# localhost:8080/api_clientes?user_hash=12345&action=put&nombre=nombre&product=nuevo&ape_pat=apellidopaterno&ape_mat=apellidomaterno&telefono=numero&correo=cemail
     def put(self, nombre,ape_mat,ape_pat,telefono,correo):
         try:
             config.model.insert_clientes(nombre,ape_mat,ape_pat,telefono,correo)
@@ -50,7 +50,7 @@ class Api_clientes:
             print "DELETE Error {}".format(e.args)
             return None
 
-# localhost:8080/api_clientes?user_hash=12345&action=update&id=1&product=nuevo&description=nueva&stock=10&purchase_price=1&price_sale=3&product_image=default.jpg
+# localhost:8080/api_clientes?user_hash=12345&action=update&id=1&correo=manl_1999@email.com&nombre=nnombre&ape_pat=apellidopaterno&ape_mat=apellidomaterno&telefono=telefono
     def update(self, id, nombre,ape_mat,ape_pat,telefono,correo):
         try:
             config.model.edit_clientes(id,nombre,ape_mat,ape_pat,telefono,correo)

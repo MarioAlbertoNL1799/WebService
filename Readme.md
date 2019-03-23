@@ -76,3 +76,4 @@ this template have the next functions
  - *printer*
  - *view*
 "# WebService" 
+"# WebService" 

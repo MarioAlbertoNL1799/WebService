@@ -30,14 +30,14 @@ class Edit:
             raise config.web.seeother('/login') # render login.html
 
 
-    def GET_EDIT(id, **k):
+    def GET_EDIT(self, id, **k):
         message = None # Error message
         id = config.check_secure_val(str(id)) # HMAC id validate
         result = config.model.get_clientes(int(id)) # search for the id
         result.id = config.make_secure_val(str(result.id)) # apply HMAC for id
         return config.render.edit(result, message) # render clientes edit.html
 
-    def POST_EDIT(id, **k):
+    def POST_EDIT(self,id, **k):
         form = config.web.input()  # get form data
         form['id'] = config.check_secure_val(str(form['id'])) # HMAC id validate
         # edit user with new data
